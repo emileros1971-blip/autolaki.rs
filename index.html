@@ -129,6 +129,12 @@
   .scard:hover .ico svg{stroke:#fff}
   .scard h3{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:10px}
   .scard p{color:var(--gray);font-size:15px}
+  .scard.highlight{background:var(--grad);color:#fff;border-color:transparent}
+  .scard.highlight h3{color:#fff}
+  .scard.highlight p{color:#dbe6f7}
+  .scard.highlight .ico{background:rgba(255,255,255,.18)}
+  .scard.highlight .ico svg{stroke:#fff}
+  .scard.highlight:hover{border-color:transparent}
 
   /* ABOUT */
   .about{background:var(--light)}
@@ -256,12 +262,10 @@
   }
   @keyframes badgePulse{0%,100%{box-shadow:0 0 0 8px rgba(255,255,255,.12),0 0 0 16px rgba(10,92,214,.18),0 24px 50px rgba(7,26,61,.45)}50%{box-shadow:0 0 0 10px rgba(255,255,255,.18),0 0 0 22px rgba(10,92,214,.25),0 28px 60px rgba(7,26,61,.55)}}
   @keyframes badgeSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-  .hero-badge-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px;position:relative;z-index:1;padding:10px;background:rgba(7,26,61,.32);border-radius:50%;width:160px;height:160px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15)}
+  .hero-badge-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;position:relative;z-index:1;padding:14px;background:rgba(7,26,61,.32);border-radius:50%;width:170px;height:170px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15)}
   .hero-badge-top{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#9fd0ff;display:block}
-  .hero-badge-main{font-size:18px;font-weight:700;color:#fff;display:block;margin-top:2px}
-  .hero-badge-amount{font-size:42px;font-weight:900;color:#fff;line-height:1;display:block;letter-spacing:-.02em;text-shadow:0 2px 10px rgba(0,0,0,.3)}
-  .hero-badge-amount small{font-size:20px;font-weight:700}
-  .hero-badge-sub{font-size:13px;font-weight:600;color:#dbe6f7;display:block;margin-top:4px;line-height:1.3;max-width:140px}
+  .hero-badge-main{font-size:20px;font-weight:900;color:#fff;display:block;margin-top:4px;line-height:1.15;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+  .hero-badge-sub{font-size:12.5px;font-weight:600;color:#dbe6f7;display:block;margin-top:6px;line-height:1.3;max-width:140px}
 
   /* BADGE ARROW */
   .badge-arrow-wrap{position:absolute;top:-62px;left:-80px;display:flex;flex-direction:column;align-items:flex-end;pointer-events:none}
@@ -274,6 +278,11 @@
   @media(max-width:580px){
     .badge-arrow-wrap{display:none}
   }
+
+  /* ONLINE BOOKING SECTION (moved near hero) */
+  .booking{background:var(--light);padding:60px 0 80px}
+  .booking .booking-head{text-align:center;margin-bottom:28px}
+  .booking iframe.web-kalendar-frame{width:100%;min-height:850px;border:0;display:block;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(7,26,61,.08)}
 
   @media(max-width:580px){
     .quick-grid,.services-grid,.admin-grid,.why-grid,.contact-grid,.gallery-grid,.hero-cards,.points,.foot-grid{grid-template-columns:1fr}
@@ -373,16 +382,29 @@
           </svg>
           <span class="badge-arrow-label">Zakaži online<br>i uštedi!</span>
         </div>
-        <div class="hero-badge">
-          <div class="hero-badge-inner">
-            <span class="hero-badge-top">AKCIJA</span>
-            <span class="hero-badge-main">Uštedi</span>
-            <span class="hero-badge-amount">1.000 <small>din</small></span>
-            <span class="hero-badge-sub">na tehnički pregled!</span>
+        <a href="#zakazivanje" style="text-decoration:none">
+          <div class="hero-badge">
+            <div class="hero-badge-inner">
+              <span class="hero-badge-top">AKCIJA</span>
+              <span class="hero-badge-main">Za online<br>zakazivanje</span>
+              <span class="hero-badge-sub">Zakaži termin online</span>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ONLINE ZAKAZIVANJE (moved directly below hero badge) -->
+<section class="booking" id="zakazivanje">
+  <div class="container">
+    <div class="booking-head">
+      <span class="eyebrow">Online zakazivanje</span>
+      <h2 style="margin-top:8px">Zakaži tehnički pregled online</h2>
+      <p class="subtitle">Izaberite termin koji vam najviše odgovara i zakažite tehnički pregled brzo i jednostavno.</p>
+    </div>
+    <iframe src='https://superregistracija.azurewebsites.net/zakazitehnickiframe.aspx?t=eCDVs2TJmFCbgufOZL84ZLzJlEnkdtmLi%2fJdTlIU%2b3Ct5dIQYUysl2Q1E5EeRhZuskZ0oFiA6zMvO3XJ4vOyVBM0aTYQ4E32YUS9fPRnfqE%3d' class='web-kalendar-frame' style='width:100%; min-height:850px; border:0; display:block; background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(7,26,61,.08);' title='Kalendar zakazivanja' frameborder='0' allowtransparency='allowtransparency' scrolling='no' scrollbar='no'></iframe>
   </div>
 </section>
 
@@ -392,23 +414,23 @@
     <div class="quick-grid">
       <div class="qcard">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <h3>Bez odlaska u MUP</h3>
-        <p>Pomažemo vam da potrebnu dokumentaciju završite brzo i jednostavno.</p>
-      </div>
-      <div class="qcard">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
-        <h3>Nalepnica odmah</h3>
-        <p>Registracionu nalepnicu izdajemo odmah nakon završene procedure.</p>
+        <h3>Tehnički pregled</h3>
+        <p>Putnička vozila i teretna vozila do ukupne mase 3.5t.</p>
       </div>
       <div class="qcard">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Osiguranje na vreme</h3>
-        <p>Završite osiguranje vozila bez dodatnog čekanja.</p>
+        <h3>Osiguranje vozila</h3>
+        <p>Dunav osiguranje i Generali osiguranje.</p>
       </div>
       <div class="qcard">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Sve na jednom mestu</h3>
-        <p>Tehnički pregled, osiguranje, uplate i nalepnice na jednoj adresi.</p>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
+        <h3>Izdavanje nalepnice</h3>
+        <p>Brzo izdavanje registracione nalepnice nakon završene procedure.</p>
+      </div>
+      <div class="qcard">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3>Uplate i administrativni poslovi</h3>
+        <p>Uplate svih vrsta računa, ugovori, plaćanje poreza na prenos vozila i ostali administrativni poslovi.</p>
       </div>
     </div>
   </div>
@@ -422,22 +444,17 @@
     <p class="subtitle">Iskoristite posebne pogodnosti za tehnički pregled i osiguranje.</p>
     <div class="offers-grid">
       <div class="offer">
-        <span class="tag">Popust 1.000 RSD</span>
-        <h3>Uštedi 1.000 dinara na tehnički pregled!</h3>
-        <p>Zaprati naš Instagram profil i dobijaš kupon za 1.000 dinara popusta u DM.</p>
-        <ol>
-          <li>Zaprati profil</li>
-          <li>Pošalji poruku u DM</li>
-          <li>Dobij kupon za popust</li>
-        </ol>
-        <div class="handle">@auto_laki_lazarevac</div><br>
-        <a href="https://www.instagram.com/auto_laki_lazarevac" target="_blank" rel="noopener" class="btn btn-white">Zaprati na Instagramu →</a>
+        <span class="tag">Akcija</span>
+        <h3>Akcija na online zakazivanje</h3>
+        <p>Zakažite tehnički pregled online i iskoristite posebnu pogodnost za online zakazivanje.</p>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1">
+          <a href="#zakazivanje" class="btn btn-white">Zakaži online →</a>
+        </div>
       </div>
       <div class="offer">
-        <span class="tag">Gratis pogodnost</span>
-        <h3>Gratis pomoć na putu</h3>
-        <p>Kad se desi ono čuveno „šta sad?”, dobro je da znaš da imaš pomoć na putu – gratis.</p>
-        <p style="margin-top:14px">Uradi tehnički pregled kod nas i osiguraj se na vreme.</p>
+        <span class="tag">Odloženo plaćanje</span>
+        <h3>Odloženo plaćanje</h3>
+        <p>Preko platnog spiska do 12 meseci, čekovima građana do 6 meseci, kreditnom karticom.</p>
         <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1">
           <a href="tel:0643637500" class="btn btn-white">Pozovi za detalje</a>
           <a href="#kontakt" class="btn btn-ghost" style="border-color:rgba(255,255,255,.5)">Kontakt →</a>
@@ -454,6 +471,11 @@
     <h2>Naše usluge</h2>
     <p class="subtitle">Sve što vam je potrebno za tehnički pregled i registraciju vozila – brzo i na jednom mestu.</p>
     <div class="services-grid">
+      <div class="scard highlight">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.39 4.84L20 8l-4 3.9L17 18l-5-2.6L7 18l1-6.1L4 8l5.61-1.16L12 2z"/></svg></div>
+        <h3>Besplatan probni tehnički pregled</h3>
+        <p>Iskoristite besplatan probni tehnički pregled vašeg vozila pre redovne registracije.</p>
+      </div>
       <div class="scard">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>Tehnički pregled</h3>
@@ -620,13 +642,7 @@
     <div class="contact-actions">
       <a href="tel:0643637500" class="btn btn-primary">📞 Pozovi odmah</a>
       <a href="mailto:Autolakitehnicki@gmail.com" class="btn btn-ghost" style="background:#fff;color:var(--navy);border:1px solid #d6deeb">✉ Pošalji email</a>
-    </div>
-
-    <!-- ONLINE ZAKAZIVANJE -->
-    <div id="zakazivanje" style="margin-top:48px">
-      <div style="text-align:center;margin-bottom:24px"><span class="eyebrow">Online zakazivanje</span></div>
-      <h2 style="margin-bottom:24px">Zakaži tehnički pregled online</h2>
-      <iframe src='https://superregistracija.azurewebsites.net/zakazitehnickiframe.aspx?t=eCDVs2TJmFCbgufOZL84ZLzJlEnkdtmLi%2fJdTlIU%2b3Ct5dIQYUysl2Q1E5EeRhZuskZ0oFiA6zMvO3XJ4vOyVBM0aTYQ4E32YUS9fPRnfqE%3d' class='web-kalendar-frame' style='width:100%; min-height:850px; border:0; display:block; background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(7,26,61,.08);' title='Kalendar zakazivanja' frameborder='0' allowtransparency='allowtransparency' scrolling='no' scrollbar='no'></iframe>
+      <a href="#zakazivanje" class="btn btn-primary">📅 Zakaži online</a>
     </div>
   </div>
 </section>
